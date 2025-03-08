@@ -6,6 +6,8 @@
     <title>WaSender - Bulk WhatsApp Sender</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -109,6 +111,33 @@
         }
         .animate-marquee:hover {
             animation-play-state: paused;
+        }
+        /* Updated Custom Animation for Purchase Button */
+        .purchase-button-animate {
+            animation: purchasePulse 2s infinite;
+        }
+
+        @keyframes purchasePulse {
+            0% {
+                transform: scale(1) translateY(0);
+            }
+            25% {
+                transform: scale(1.05) translateY(-3px);
+            }
+            50% {
+                transform: scale(1.03) translateY(0);
+            }
+            75% {
+                transform: scale(1.05) translateY(-2px);
+            }
+            100% {
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Custom animation speed for Animate.css */
+        .animate__animated.animate__faster {
+            animation-duration: 1.5s;
         }
     </style>
 </head>
@@ -274,11 +303,15 @@
             <div class="lg:col-start-2">
                 <!-- Mobile Price and Buttons Section -->
                 <div class="block lg:hidden mb-8">
-                    <div class="text-3xl font-bold mb-4">₹1,999.00</div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-2xl text-gray-500 line-through">₹4,999.00</span>
+                        <span class="text-3xl font-bold text-gray-900">₹1,999.00</span>
+                    </div>
+                    
                     <div class="flex space-x-4">
                         <div class="w-1/2">
                             <a href="https://payments.cashfree.com/forms/WHATSAPP2025TOOL">
-                                <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                                <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 animate__animated animate__bounce animate__infinite animate__faster purchase-button-animate">
                                     Purchase Now
                                 </button>
                             </a>
@@ -321,13 +354,17 @@
                             Auto-Reply Bot Included
                         </li>
                     </ul>
-
+                   <!--price-->
                     <div class="mb-8">
-                        <div class="text-3xl font-bold mb-4">₹1,999.00</div>
-                        <div class="flex space-x-4">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-2xl text-gray-500 line-through">₹4,999.00</span>
+                            <span class="text-3xl font-bold text-gray-900">₹1,999.00</span>
+                        </div>
+                        
+                        <div class="flex space-x-4 mb-8">
                             <div class="w-1/2">
                                 <a href="https://payments.cashfree.com/forms/WHATSAPP2025TOOL">
-                                    <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                                    <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 animate__animated animate__bounce animate__infinite animate__faster purchase-button-animate">
                                         Purchase Now
                                     </button>
                                 </a>
@@ -340,6 +377,19 @@
                                     </svg>
                                     Watch Tutorial
                                 </button>
+                            </div>
+                        </div>
+
+                        <!-- Item Details Section for Desktop -->
+                        <div class="border-t border-gray-200">
+                            <button class="w-full py-4 flex justify-between items-center hover:bg-gray-50">
+                                <span class="text-lg font-semibold">Item Details</span>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="pb-4">
+                                <p class="text-gray-600">A powerful Windows software solution for WhatsApp automation. Send unlimited messages, manage groups, and automate responses with our intuitive interface.</p>
                             </div>
                         </div>
                     </div>
@@ -371,28 +421,52 @@
                             Auto-Reply Bot Included
                         </li>
                     </ul>
+
+                    <!-- <div class="mb-8">
+                        <div class="text-3xl font-bold mb-1">₹1,999.00</div>
+                        
+                        
+                        <div class="flex space-x-4 mb-8">
+                            <div class="w-1/2">
+                                <a href="https://payments.cashfree.com/forms/WHATSAPP2025TOOL">
+                                    <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                                        Purchase Now
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="w-1/2">
+                                <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition flex items-center justify-center">
+                                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Watch Tutorial
+                                </button>
+                            </div>
+                        </div> -->
+
+                        <!-- Item Details Section for Mobile -->
+                        <div class="border-t border-gray-200">
+                            <button class="w-full py-4 flex justify-between items-center hover:bg-gray-50">
+                                <span class="text-lg font-semibold">Item Details</span>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="pb-4">
+                                <p class="text-gray-600">A powerful Windows software solution for WhatsApp automation. Send unlimited messages, manage groups, and automate responses with our intuitive interface.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Expandable Sections -->
-        <div class="border-t border-gray-200 ml-8">
-            <button class="w-full py-4 flex justify-between items-center hover:bg-gray-50">
-                <span class="text-lg font-semibold">Item Details</span>
-                <!-- <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-            <div class="pb-4">
-                <p class="text-gray-600">A powerful Windows software solution for WhatsApp automation. Send unlimited messages, manage groups, and automate responses with our intuitive interface.</p>
-                
-            </div>
-        </div>
-
-        <div class="border-t border-gray-200 ml-8">
+        <!-- Key Features Section -->
+        <div class="border-t border-gray-200">
             <button class="w-full py-4 flex justify-between items-center hover:bg-gray-50">
                 <span class="text-lg font-semibold">Key Features</span>
-                <!-- <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </button>
